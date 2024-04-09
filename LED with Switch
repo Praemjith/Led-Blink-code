@@ -1,0 +1,24 @@
+// Define the pin connected to the LED
+const int ledPin = 13;
+// Define the pin connected to the push button
+const int buttonPin = 2;
+
+void setup() {
+  // Initialize the digital pin for the LED as an output
+  pinMode(ledPin, OUTPUT);
+  // Initialize the digital pin for the push button as an input with internal pull-up resistor enabled
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  // Read the state of the push button
+  int buttonState = digitalRead(buttonPin);
+
+  // If the push button is pressed (LOW state), turn on the LED
+  if (buttonState == LOW) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    // If the push button is not pressed (HIGH state), turn off the LED
+    digitalWrite(ledPin, LOW);
+  }
+}
